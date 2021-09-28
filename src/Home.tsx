@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from './react.svg';
-import './Home.css';
+import './Home.sass';
+
+
+import Button from 'react-bootstrap/Button';
 
 class Home extends React.Component {
   render() {
@@ -25,6 +28,7 @@ class Home extends React.Component {
             <a href="https://palmer.chat">Community Slack</a>
           </li>
         </ul>
+        <Button variant="primary">Primary</Button>
       </div>
     );
   }
