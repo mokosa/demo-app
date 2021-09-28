@@ -4,34 +4,64 @@ import './Home.sass';
 
 
 import Button from 'react-bootstrap/Button';
+import { Breadcrumb, Col, Container, Row, Table } from 'react-bootstrap';
+import Navbar from './components/Navbar';
+import Icon from './components/Icon';
 
 class Home extends React.Component {
   render() {
     return (
-      <div className="Home">
-        <div className="Home-header">
-          <img src={logo} className="Home-logo" alt="logo" />
-          <h2>Welcome to Razzle</h2>
-        </div>
-        <p className="Home-intro">
-          To get started, edit <code>src/App.js</code> or{' '}
-          <code>src/Home.js</code> and save to reload.
-        </p>
-        <ul className="Home-resources">
-          <li>
-            <a href="https://github.com/jaredpalmer/razzle">Docs</a>
-          </li>
-          <li>
-            <a href="https://github.com/jaredpalmer/razzle/issues">Issues</a>
-          </li>
-          <li>
-            <a href="https://palmer.chat">Community Slack</a>
-          </li>
-        </ul>
-        <Button variant="primary">Primary</Button>
-      </div>
+      <Container fluid>
+        <Navbar/>
+        <Container>
+          <Row>
+            <Col>
+              Content goes here
+            </Col>
+
+          </Row>
+          <Col>
+            <Icon />
+          </Col>
+          <Row>
+            <Col>
+            <Table striped bordered hover variant="dark">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Username</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td colSpan={2}>Larry the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </Table>
+            </Col>
+          </Row>
+        </Container>
+      </Container>
+
     );
   }
 }
 
 export default Home;
+
