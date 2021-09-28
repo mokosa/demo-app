@@ -4,15 +4,13 @@ import { FunctionComponent } from 'react';
 import { FaEdit } from 'react-icons/fa';
 
 const icons = {
-    edit: <FaEdit></FaEdit>
-}
+  edit: <FaEdit></FaEdit>,
+};
 
-interface IconProps {
-    
-}
- 
+interface IconProps {}
+
 const Icon: FunctionComponent<IconProps> = () => {
-    return icons['edit'];
-}
- 
+  return icons['edit'];
+};
+
 export default Icon;

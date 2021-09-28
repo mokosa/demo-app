@@ -4,7 +4,6 @@ import Home from './Home';
 
 import './App.sass';
 
-
 const App = () => (
   <Switch>
     <Route exact path="/" component={Home} />
