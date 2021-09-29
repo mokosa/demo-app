@@ -1,71 +1,55 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import './Home.sass';
 
-import { Col, Container, Row, Table } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import Navbar from './components/Navbar';
 import Icon from './components/Icon';
 import Button from './components/Button';
+import Table, { TableDataset } from './components/Table';
 
-class Home extends React.Component {
-  render() {
-    return (
-      <Container fluid>
-        <Navbar />
-        <Container>
-          <Row>
-            <Col>Content goes here</Col>
-            <Col>
-              <Button variant="outline-light" size="sm">
-                <Icon icon="edit" />
-              </Button>
-            </Col>
-          </Row>
+const tableData: TableDataset = {
+  columnLabels: ['#', 'First Name', 'Last Name', 'Username', ''],
+  rows: [
+    [1, 'Ursula', 'Otto', '@udo'],
+    [2, 'Jacob', 'Doe', '@jdoe'],
+    [3, 'Maria', 'Smith', '@msm'],
+  ],
+};
+
+export const Home: React.FunctionComponent = () => {
+  const actions = () => (
+    <React.Fragment>
+      <Button size="sm">
+        <Icon name="edit" />
+      </Button>
+      <Button size="sm">
+        <Icon name="delete" />
+      </Button>
+    </React.Fragment>
+  );
+
+  return (
+    <Container fluid>
+      <Navbar />
+      <Container>
+        <Row>
+          <Col>Content goes here</Col>
+        </Row>
+        <Col>
+          <Icon />
+        </Col>
+        <Col>
+          <Icon />
+        </Col>
+        <Col>
+          <Icon />
+        </Col>
+        <Row>
           <Col>
-            <Icon />
+            <Table dataset={tableData} actions={actions} />
           </Col>
-          <Col>
-            <Icon />
-          </Col>
-          <Col>
-            <Icon />
-          </Col>
-          <Row>
-            <Col>
-              <Table striped bordered hover variant="dark">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td colSpan={2}>Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
-                </tbody>
-              </Table>
-            </Col>
-          </Row>
-        </Container>
+        </Row>
       </Container>
-    );
-  }
-}
-
-export default Home;
+    </Container>
+  );
+};
