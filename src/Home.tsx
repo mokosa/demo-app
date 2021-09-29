@@ -4,6 +4,7 @@ import './Home.sass';
 import { Col, Container, Row, Table } from 'react-bootstrap';
 import Navbar from './components/Navbar';
 import Icon from './components/Icon';
+import Button from './components/Button';
 
 class Home extends React.Component {
   render() {
@@ -13,6 +14,11 @@ class Home extends React.Component {
         <Container>
           <Row>
             <Col>Content goes here</Col>
+            <Col>
+              <Button variant="outline-light" size="sm">
+                <Icon icon="edit" />
+              </Button>
+            </Col>
           </Row>
           <Col>
             <Icon />

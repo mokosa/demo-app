@@ -4,13 +4,17 @@ import { FunctionComponent } from 'react';
 import { FaEdit } from 'react-icons/fa';
 
 const icons = {
-  edit: <FaEdit></FaEdit>,
+  edit: <FaEdit />,
 };
 
-interface IconProps {}
+export type IconName = keyof typeof icons;
 
-const Icon: FunctionComponent<IconProps> = () => {
-  return icons['edit'];
+interface IconProps {
+  icon?: IconName;
+}
+
+const Icon: FunctionComponent<IconProps> = (props) => {
+  return (props.icon && icons[props.icon]) || null;
 };
 
 export default Icon;
